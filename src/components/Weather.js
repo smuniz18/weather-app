@@ -24,7 +24,10 @@ const Weather = props => (
     {props.description && (
       <p className="weather__key">
         Description:{" "}
-        <span className="weather__value"> {props.description}</span>
+        <span className="weather__value">
+          {" "}
+          {props.description} <img src={props.icon} alt={props.description} />
+        </span>
       </p>
     )}
     {props.error && <p className="weather__error">{props.error}</p>}

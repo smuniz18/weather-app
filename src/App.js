@@ -12,6 +12,7 @@ class App extends React.Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
+    icon: undefined,
     error: undefined
   };
   getWeather = async e => {
@@ -30,6 +31,8 @@ class App extends React.Component {
         country: data.sys.country,
         humidity: data.main.humidity,
         description: data.weather[0].description,
+        icon:
+          "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png",
         error: ""
       });
     } else {
@@ -39,6 +42,7 @@ class App extends React.Component {
         country: undefined,
         humidity: undefined,
         description: undefined,
+        icon: undefined,
         error: "Please enter the value"
       });
     }
@@ -61,6 +65,7 @@ class App extends React.Component {
                     country={this.state.country}
                     humidity={this.state.humidity}
                     description={this.state.description}
+                    icon={this.state.icon}
                     error={this.state.error}
                   />
                 </div>
